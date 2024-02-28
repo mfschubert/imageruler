@@ -1,10 +1,8 @@
 """Imageruler."""
 
-__version__ = '1.0'
+__version__ = "v0.1.0"
 
-import imageruler.imageruler
-import imageruler.regular_shapes
-from .imageruler import (
+from imageruler.imageruler import (
     KernelShape,
     PaddingMode,
     binary_close,

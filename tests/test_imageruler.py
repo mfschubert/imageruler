@@ -4,10 +4,7 @@ import unittest
 import imageruler
 import numpy as np
 
-try:
-  from imageruler.regular_shapes import disc, rounded_square, stripe
-except:
-  from regular_shapes import disc, rounded_square, stripe
+from imageruler.regular_shapes import disc, rounded_square, stripe
 
 
 # properties of design weights array

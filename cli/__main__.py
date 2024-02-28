@@ -1,4 +1,7 @@
-"""Command line interface for imageruler."""
+"""Command line interface for imageruler.
+
+Invoke by running `python cli` from the imageruler directory.
+"""
 
 import argparse
 import imageruler
