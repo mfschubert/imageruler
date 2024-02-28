@@ -60,25 +60,25 @@ def minimum_length_solid(
     """Computes the minimum length scale of the solid regions of an image.
 
     Args:
-      array: The 1D or 2D binarized image array.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries. Defaults to
-        solid.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
-      warn_cusp: Whether to warn about the presence of sharp corners or cusps
-        detected in the image. Default is False (no warning).
+        array: The 1D or 2D binarized image array.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries. Defaults to
+            solid.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
+        warn_cusp: Whether to warn about the presence of sharp corners or cusps
+            detected in the image. Default is False (no warning).
 
     Returns:
-      The minimum length scale of the solid regions in the input image. The units
-      are the same as those of `phys_size`. If `phys_size` is not specified, pixel
-      units are used.
+        The minimum length scale of the solid regions in the input image. The units
+        are the same as those of `phys_size`. If `phys_size` is not specified, pixel
+        units are used.
     """
 
     array, pixel_size, short_pixel_side, short_entire_side = _initialize_ruler(
@@ -129,24 +129,24 @@ def minimum_length_void(
     """Computes the minimum length scale of the void regions of an image.
 
     Args:
-      array: The 1D or 2D binarized image array.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries. Defaults to void.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
-      warn_cusp: Whether to warn about the presence of sharp corners or cusps
-        detected in the image. Default is False (no warning).
+        array: The 1D or 2D binarized image array.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries. Defaults to void.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
+        warn_cusp: Whether to warn about the presence of sharp corners or cusps
+            detected in the image. Default is False (no warning).
 
     Returns:
-      The minimum length scale of the void regions in the input image. The units
-      are the same as those of `phys_size`. If `phys_size` is not specified, pixel
-      units are used.
+        The minimum length scale of the void regions in the input image. The units
+        are the same as those of `phys_size`. If `phys_size` is not specified, pixel
+        units are used.
     """
     array, _, _, _ = _initialize_ruler(array, phys_size)
     if pad_mode is PaddingMode.SOLID:
@@ -182,25 +182,25 @@ def minimum_length_solid_void(
     """Computes the minimum length scale for both phases of an image.
 
     Args:
-      array: The 1D or 2D binarized image array.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries for each phase.
-        Defaults to solid for the solid phase and void for the void phase.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
-      warn_cusp: Whether to warn about the presence of sharp corners or cusps
-        detected in the image. Default is False (no warning).
+        array: The 1D or 2D binarized image array.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries for each phase.
+            Defaults to solid for the solid phase and void for the void phase.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
+        warn_cusp: Whether to warn about the presence of sharp corners or cusps
+            detected in the image. Default is False (no warning).
 
     Returns:
-      The minimum length scale of the solid and void phases in the input image.
-      The units are the same as those of `phys_size`. If `phys_size` is not
-      specified, pixel units are used.
+        The minimum length scale of the solid and void phases in the input image.
+        The units are the same as those of `phys_size`. If `phys_size` is not
+        specified, pixel units are used.
     """
     return minimum_length_solid(
         array=array,
@@ -241,25 +241,25 @@ def minimum_length(
     a brute-force search.
 
     Args:
-      array: The 1D or 2D binarized image array.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries for each phase.
-        Defaults to solid for the solid phase and void for the void phase.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
-      warn_cusp: Whether to warn about the presence of sharp corners or cusps
-        detected in the image. Default is False (no warning).
+        array: The 1D or 2D binarized image array.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries for each phase.
+            Defaults to solid for the solid phase and void for the void phase.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
+        warn_cusp: Whether to warn about the presence of sharp corners or cusps
+            detected in the image. Default is False (no warning).
 
     Returns:
-      The minimum length scale of the solid and void phases in the input image.
-      The units are the same as those of `phys_size`. If `phys_size` is not
-      specified, pixel units are used.
+        The minimum length scale of the solid and void phases in the input image.
+        The units are the same as those of `phys_size`. If `phys_size` is not
+        specified, pixel units are used.
     """
     array, pixel_size, short_pixel_side, short_entire_side = _initialize_ruler(
         array, phys_size, periodic_axes, warn_cusp
@@ -352,21 +352,21 @@ def length_violation_solid(
     """Identifies the solid subregions which contain length scale violations.
 
     Args:
-      array: The 2D binarized image array.
-      diameter: The diameter of the kernel for detecting length scale violations.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries. Defaults to void.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
+        array: The 2D binarized image array.
+        diameter: The diameter of the kernel for detecting length scale violations.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries. Defaults to void.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
 
     Returns:
-      An array indicating the solid length scale violations in the input image.
+        An array indicating the solid length scale violations in the input image.
     """
 
     array, pixel_size, _, _ = _initialize_ruler(array, phys_size, periodic_axes)
@@ -393,21 +393,21 @@ def length_violation_void(
     """Identifies the void subregions which contain length scale violations.
 
     Args:
-      array: The 2D binarized image array.
-      diameter: The diameter of the kernel for detecting length scale violations.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries. Defaults to void.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
+        array: The 2D binarized image array.
+        diameter: The diameter of the kernel for detecting length scale violations.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries. Defaults to void.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
 
     Returns:
-      An array indicating the void length scale violations in the input image.
+        An array indicating the void length scale violations in the input image.
     """
 
     array, pixel_size, _, _ = _initialize_ruler(array, phys_size, periodic_axes)
@@ -445,22 +445,22 @@ def length_violation(
     """Identifies the subregions which contain length scale violations.
 
     Args:
-      array: The 2D binarized image array.
-      diameter: The diameter of the kernel for detecting length scale violations.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pad_mode: The padding mode to use at the image boundaries for each phase.
-        Defaults to solid for the solid phase and void for the void phase.
-      kernel_shape: The kernel shape to use for probing the length scale. Defaults
-        to a circular kernel.
+        array: The 2D binarized image array.
+        diameter: The diameter of the kernel for detecting length scale violations.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pad_mode: The padding mode to use at the image boundaries for each phase.
+            Defaults to solid for the solid phase and void for the void phase.
+        kernel_shape: The kernel shape to use for probing the length scale. Defaults
+            to a circular kernel.
 
     Returns:
-      An array indicating the length scale violations in the input image.
+        An array indicating the length scale violations in the input image.
     """
 
     array, pixel_size, _, _ = _initialize_ruler(array, phys_size, periodic_axes)
@@ -490,24 +490,24 @@ def _initialize_ruler(
     dimensions and computes some basic information about the image.
 
     Args:
-      array: The 2D binarized image array.
-      phys_size: The extent of the image in physical units. If not specified,
-        pixel units are used for the returned length scale.
-      periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
-        specified, no axes are treated as periodic.
-      warn_cusp: Whether to warn about the presence of sharp corners or cusps
-        detected in the image. Default is False (no warning).
+        array: The 2D binarized image array.
+        phys_size: The extent of the image in physical units. If not specified,
+            pixel units are used for the returned length scale.
+        periodic_axes: The axes which are periodic. x is 0 and y is 1. If not
+            specified, no axes are treated as periodic.
+        warn_cusp: Whether to warn about the presence of sharp corners or cusps
+            detected in the image. Default is False (no warning).
 
     Returns:
-      A tuple with four elements. The first is a Boolean array obtained by
-      squeezing and binarizing the input array, the second is an array that
-      contains the pixel size, the third is the length of the shorter side of
-      the pixel, and the fourth is the length of the shorter side of the image.
+        A tuple with four elements. The first is a Boolean array obtained by
+        squeezing and binarizing the input array, the second is an array that
+        contains the pixel size, the third is the length of the shorter side of
+        the pixel, and the fourth is the length of the shorter side of the image.
 
     Raises:
-      ValueError: If the physical size `phys_size` does not have the
-      expected format or the length of `phys_size` does not match the dimension
-      of the input array.
+        ValueError: If the physical size `phys_size` does not have the
+            expected format or the length of `phys_size` does not match the dimension
+            of the input array.
     """
 
     array = np.squeeze(array)
@@ -568,21 +568,21 @@ def _search(
     """Performs a binary search.
 
     Args:
-      arg_range: Initial range of the argument under search.
-      arg_threshold: Threshold of the argument range, below which the search
-        stops.
-      function: A function that returns True if the viariable is large enough but
-        False if the variable is not large enough.
+        arg_range: Initial range of the argument under search.
+        arg_threshold: Threshold of the argument range, below which the search
+            stops.
+        function: A function that returns True if the viariable is large enough but
+            False if the variable is not large enough.
 
     Returns:
-      A tuple with two elements. The first is a float that represents the search
-      result. The second is a Boolean value, which is True if the search indeed
-      happens, False if the condition for starting search is not satisfied in
-      the beginning.
+        A tuple with two elements. The first is a float that represents the search
+        result. The second is a Boolean value, which is True if the search indeed
+        happens, False if the condition for starting search is not satisfied in
+        the beginning.
 
     Raises:
-      RuntimeError: If `function` returns True at a smaller input viariable
-      but False at a larger input viariable.
+        RuntimeError: If `function` returns True at a smaller input viariable
+            but False at a larger input viariable.
     """
 
     args = [min(arg_range), (min(arg_range) + max(arg_range)) / 2, max(arg_range)]
@@ -612,11 +612,11 @@ def _minimum_length_1d(array: Array) -> Tuple[int, int]:
     """Searches the minimum lengths of solid and void segments in a 1d array.
 
     Args:
-      array: A 1D boolean array.
+        array: A 1D boolean array.
 
     Returns:
-      A tuple of two integers. The first and second intergers represent the
-      numbers of pixels in the shortest solid and void segments, respectively.
+        A tuple of two integers. The first and second intergers represent the
+        numbers of pixels in the shortest solid and void segments, respectively.
     """
 
     array = np.append(array, ~array[-1])
@@ -654,13 +654,13 @@ def _get_interior(
     """Gets inner borders, outer borders, or union of inner and outer borders.
 
     Args:
-      array: A 2D array that represents an image.
-      direction: The direction indicating inner borders, outer borders, or a union
-        of inner and outer borders.
-      pad_mode: The padding mode to use.
+        array: A 2D array that represents an image.
+        direction: The direction indicating inner borders, outer borders, or a union
+            of inner and outer borders.
+        pad_mode: The padding mode to use.
 
     Returns:
-      A Boolean array in which all True elements are at and only at borders.
+        A Boolean array in which all True elements are at and only at borders.
     """
     if direction is Direction.IN:
         return binary_erode(array, _PLUS_KERNEL, pad_mode)
@@ -695,15 +695,15 @@ def get_kernel(
     """Gets the kernel with a given diameter and pixel size.
 
     Args:
-      diameter: A float that represents the diameter of the kernel, which acts
-        like a probe.
-      pixel_size: A tuple, list, or array that represents the physical size of one
-        pixel in the image.
-      kernel_shape: The kernel shape to use.
+        diameter: A float that represents the diameter of the kernel, which acts
+            like a probe.
+        pixel_size: A tuple, list, or array that represents the physical size of one
+            pixel in the image.
+        kernel_shape: The kernel shape to use.
 
     Returns:
-      An array of unsigned integers 0 and 1 representing the kernel for
-      morpological operations.
+        An array of unsigned integers 0 and 1 representing the kernel for
+        morpological operations.
     """
 
     pixel_size = np.asarray(pixel_size)
@@ -750,12 +750,12 @@ def binary_open(
     """Applies a binary morphological opening.
 
     Args:
-      array: A binarized 2D array that represents a binary image.
-      kernel: The kernel to use.
-      pad_mode: The padding mode.
+        array: A binarized 2D array that represents a binary image.
+        kernel: The kernel to use.
+        pad_mode: The padding mode.
 
     Returns:
-      A boolean array that represents the outcome of morphological opening.
+        A boolean array that represents the outcome of morphological opening.
     """
     pad_width, unpad_width = _get_padding_for_kernel(kernel)
     array = _apply_padding(array, pad_width, pad_mode)
@@ -771,12 +771,12 @@ def binary_close(
     """Applies a binary morphological closing.
 
     Args:
-      arr: A binarized 2D array that represents a binary image.
-      kernel: The kernel to use.
-      pad_mode: The padding mode.
+        arr: A binarized 2D array that represents a binary image.
+        kernel: The kernel to use.
+        pad_mode: The padding mode.
 
     Returns:
-      A boolean array that represents the outcome of morphological closing.
+        A boolean array that represents the outcome of morphological closing.
     """
     pad_width, unpad_width = _get_padding_for_kernel(kernel)
     arr = _apply_padding(arr, pad_width, pad_mode)
@@ -792,12 +792,12 @@ def binary_erode(
     """Applies a binary morphological erosion.
 
     Args:
-      array: A binarized 2D array that represents a binary image.
-      kernel: The kernel to use.
-      pad_mode: The padding mode.
+        array: A binarized 2D array that represents a binary image.
+        kernel: The kernel to use.
+        pad_mode: The padding mode.
 
     Returns:
-      A boolean array that represents the outcome of morphological erosion.
+        A boolean array that represents the outcome of morphological erosion.
     """
     pad_width, unpad_width = _get_padding_for_kernel(kernel)
     array = _apply_padding(array, pad_width, pad_mode)
@@ -813,12 +813,12 @@ def binary_dilate(
     """Applies a binary morphological dilation.
 
     Args:
-      array: A binarized 2D array that represents a binary image.
-      kernel: The kernel to use.
-      pad_mode: The padding mode.
+        array: A binarized 2D array that represents a binary image.
+        kernel: The kernel to use.
+        pad_mode: The padding mode.
 
     Returns:
-      A boolean array that represents the outcome of morphological dilation.
+        A boolean array that represents the outcome of morphological dilation.
     """
     pad_width, unpad_width = _get_padding_for_kernel(kernel)
     array = _apply_padding(array, pad_width, pad_mode)
@@ -877,14 +877,14 @@ def _trim_margins(
     """Trims margins from an array.
 
     Args:
-      array: The 1D or 2D binarized image array.
-      margin_size: The physical dimensions of the image margins. If specified,
-        this subregion is excluded from the length scale measurement. Default is
-        no margins.
-      pixel_size: The physical size of one pixel in the image.
+        array: The 1D or 2D binarized image array.
+        margin_size: The physical dimensions of the image margins. If specified,
+            this subregion is excluded from the length scale measurement. Default is
+            no margins.
+        pixel_size: The physical size of one pixel in the image.
 
     Returns:
-      The input array with the sepecified margins trimmed.
+        The input array with the sepecified margins trimmed.
     """
 
     array = np.squeeze(array)

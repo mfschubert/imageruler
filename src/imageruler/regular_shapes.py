@@ -16,11 +16,11 @@ def rounded_square(
     Args:
         resolution: A float that represents the number of points per unit length.
         phys_size: A tuple with two elements that describe the physical size of
-          the entire pattern.
+            the entire pattern.
         declared_mls: A float that represents the declared minimum length scale,
-          which is equal to the diameter of round corners.
+            which is equal to the diameter of round corners.
         center: A tuple with two elements that describe the coordinates of the
-          center of the square.
+            center of the square.
         angle: A float that represents the angle of rotation in degree.
 
     Returns:
@@ -115,10 +115,10 @@ def disc(
     Args:
         resolution: A float that represents the number of points per unit length.
         phys_size: A tuple with two elements that describe the physical size of
-          the entire pattern.
+            the entire pattern.
         diameter: A float that represents the diameter of the disc.
         center: A tuple with two elements that describe the coordinates of the
-          center of the square.
+            center of the square.
 
     Returns:
         An array with Boolean elements.
@@ -147,10 +147,10 @@ def stripe(
     Args:
         resolution: A float that represents the number of points per unit length.
         phys_size: A tuple with two elements that describe the physical size of
-          the entire pattern.
+            the entire pattern.
         width: A float that represents the width of the stripe.
         center: A tuple with two elements that describe the coordinates of the
-          center of the stripe.
+            center of the stripe.
         angle: A float that represents the angle of rotation in degree.
 
     Returns:
