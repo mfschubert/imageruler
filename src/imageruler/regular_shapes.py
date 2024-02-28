@@ -11,7 +11,7 @@ def rounded_square(
     center: Tuple[float, float] = (0, 0),
     angle: float = 0,
 ) -> np.ndarray:
-    """Return a Boolean array where all True elements form a square with rounded corners.
+    """Return a bool array where all True elements form a square with rounded corners.
 
     Args:
         resolution: A float that represents the number of points per unit length.

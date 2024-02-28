@@ -64,7 +64,9 @@ class TestDuality(unittest.TestCase):
         declared_mls: float = 50.0
         for angle in [0, 10.5, 44.3, 73.9]:
             print(f"Rotation angle of the rounded square: {angle}°")
-            pattern = shapes.rounded_square(resolution, phys_size, declared_mls, angle=angle)
+            pattern = shapes.rounded_square(
+                resolution, phys_size, declared_mls, angle=angle
+            )
             for diameter in self.diameters:
                 print(f"Kernel diameter: {diameter:.2f}")
                 self.assertTrue(self.duality_dilation_erosion(pattern, diameter))
@@ -110,7 +112,9 @@ class TestMinimumLengthScale(unittest.TestCase):
         print("Declared minimum length scale: ", declared_mls)
 
         for angle in [5.6, 25.2, 49.3, 69.5]:
-            pattern = shapes.rounded_square(resolution, phys_size, declared_mls, angle=angle)
+            pattern = shapes.rounded_square(
+                resolution, phys_size, declared_mls, angle=angle
+            )
             solid_mls = imageruler.minimum_length_solid(pattern)
             print(f"Rotation angle of the rounded square: {angle}°")
             print(f"Estimated minimum length scale: {solid_mls:.2f}")
@@ -164,7 +168,9 @@ class TestMinimumLengthScale(unittest.TestCase):
         print(f"Declared minimum length scale: {shapes.stripe_width}")
         pattern = shapes.stripe(
             resolution, phys_size, shapes.stripe_width, center=(0, -phys_size[1] / 2)
-        ) | shapes.stripe(resolution, phys_size, shapes.stripe_width, center=(0, phys_size[1] / 2))
+        ) | shapes.stripe(
+            resolution, phys_size, shapes.stripe_width, center=(0, phys_size[1] / 2)
+        )
         solid_mls = imageruler.minimum_length_solid(pattern, phys_size, periodic_axes=1)
         print(f"Estimated minimum length scale: {solid_mls:.2f}")
         self.assertAlmostEqual(solid_mls, shapes.stripe_width, delta=1)
