@@ -15,7 +15,7 @@ The procedure used by Imageruler for determining the minimum length scale of the
 
 To estimate the minimum length scale of the void regions, the binary image is inverted after the binarization of Step 1: $\rho \rightarrow \neg \rho$ such that the solid and void regions are interchanged. The remaining Steps 2-5 are unchanged. This approach is equivalent to computing $\mathcal{C}_d(\rho) \oplus \rho$ in Step 2 and then checking its overlap with the interior pixels of the void regions of $\rho$ in Step 3. $\mathcal{C}_d(\rho)$ denotes morphological closing.
 
-The minimum length scale of $\rho$ is the smaller of the minimum length scales of the solid and void regions. Rather than determining these separately, it is possible in principle to compute their minimum simultaneously using $\mathcal{O}_d(\rho) \oplus \mathcal{C}_d(\rho)$ in Step 2 and then to check its overlap with the union of the interior pixels of the solid and void regions of $\rho$ in Step 3. This approach involves a single binary search rather than two.
+The minimum length scale of $\rho$ is the smaller of the minimum length scales of the solid and void regions. Rather than determining these separately, it is possible in principle to compute their minimum simultaneously using $\mathcal{O}_d(\rho) \oplus \mathcal{C}_d(\rho)$ and then to check its overlap with the union of the interior pixels of the solid and void regions of $\rho$. This approach involves a single binary search rather than two.
 
 ## Schemes for Identifying Ignored Violations
 The `ignore_scheme` is an optional argument to top-level functions such as `imageruler.minimum_length_scale`. The choice may affect the length scale value reported for a given design; the possible values are as follows:
